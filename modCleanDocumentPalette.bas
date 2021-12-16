@@ -62,7 +62,7 @@ Public Sub ConvertToCMYK()
                If s.Fill.Type = cdrUniformFill Then
                     With s.Fill.UniformColor
                          If .RGBValue = 0 Or .RGBValue = 3486775 Or .RGBValue = 2697256 Then
-                              .CMYKAssign 100, 100, 100, 100
+                              .CMYKAssign 40, 0, 0, 100
                          End If
                     End With
                End If
@@ -103,7 +103,7 @@ Public Sub ConvertLineColor()
           For Each s In p.Shapes
                If s.Outline.Type = cdrOutline Then
                     With s.Outline
-                         .Color.CMYKAssign 100, 100, 100, 100
+                         .Color.CMYKAssign 40, 0, 0, 100
                          .Width = ConvertUnits(1, cdrMillimeter, cdrInch)
                          .LineCaps = cdrOutlineRoundLineCaps
                          .LineJoin = cdrOutlineRoundLineJoin
